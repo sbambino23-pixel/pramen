@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prAmen — Build a Daily Prayer Habit</title>
+    <meta name="description" content="prAmen is a faith-based prayer app that helps you build a daily prayer habit with streaks, journaling, and Prayer Circles for group accountability.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0D0D0F;
+            color: #E8E4DC;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+        .logo span {
+            color: #C9A44A;
+        }
+        .nav {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2A2A2E;
+        }
+        .nav a {
+            margin-right: 24px;
+            font-size: 14px;
+            color: #8A8A8E;
+            text-decoration: none;
+        }
+        .nav a:hover, .nav a.active {
+            color: #C9A44A;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .hero-emoji {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #E8E4DC;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        h1 span {
+            color: #C9A44A;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #8A8A8E;
+            max-width: 480px;
+            margin: 0 auto 32px;
+        }
+        .app-store-badge {
+            display: inline-block;
+            background: #C9A44A;
+            color: #0D0D0F;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .app-store-badge:hover {
+            opacity: 0.9;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 48px 0;
+        }
+        .feature {
+            background: #1A1A1E;
+            border: 1px solid #2A2A2E;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        .feature h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #E8E4DC;
+            margin-bottom: 6px;
+        }
+        .feature p {
+            font-size: 14px;
+            color: #8A8A8E;
+        }
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #2A2A2E;
+            font-size: 13px;
+            color: #8A8A8E;
+            text-align: center;
+        }
+        .footer a {
+            color: #8A8A8E;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .footer a:hover {
+            color: #C9A44A;
+        }
+        @media (max-width: 600px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🙏 <span>prAmen</span></div>
+        <div class="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+        </div>
+
+        <div class="hero">
+            <div class="hero-emoji">🙏</div>
+            <h1>Build a daily<br><span>prayer habit</span></h1>
+            <p>Track your prayers, maintain streaks, journal your journey, and grow together in Prayer Circles with family and friends.</p>
+            <a href="#" class="app-store-badge">Download on the App Store</a>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔥</div>
+                <h3>Prayer Streaks</h3>
+                <p>Build consistency with daily prayer streaks and milestone celebrations.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <h3>Prayer Circles</h3>
+                <p>Pray together with family, friends, and church groups. Share requests and encouragement.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📖</div>
+                <h3>Journal</h3>
+                <p>Reflect on your prayers with a built-in journal and daily scripture.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <h3>Multi-Language</h3>
+                <p>Available in English, French, Spanish, and Portuguese.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="support.html">Support</a>
+            </p>
+            <p style="margin-top: 12px;">&copy; 2026 prAmen. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
