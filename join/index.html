@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a Prayer Circle — prAmen</title>
+    <meta name="description" content="Join a prAmen prayer circle and start praying together.">
+    <meta property="og:title" content="prAmen — Pray Together. Stay Together.">
+    <meta property="og:description" content="Build a daily prayer habit with guided prayers, streaks, journaling, and Prayer Circles for group accountability.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pramen.app/join/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0D0D0F;
+            color: #E8E4DC;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .container { max-width: 480px; text-align: center; }
+        .emoji { font-size: 64px; margin-bottom: 24px; }
+        h1 { font-size: 28px; margin-bottom: 12px; }
+        h1 span { color: #C9A44A; }
+        .subtitle {
+            color: #8A8A8E;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .code-box {
+            background: #1A1A1E;
+            border: 1px solid #2A2A2E;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            display: none;
+        }
+        .code-label {
+            font-size: 13px;
+            color: #8A8A8E;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+        .code-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #C9A44A;
+            letter-spacing: 6px;
+            font-family: monospace;
+        }
+        .steps {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: #8A8A8E;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .step-num {
+            background: #C9A44A;
+            color: #0D0D0F;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step strong { color: #C9A44A; }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #C9A44A, #B8933D);
+            color: #0D0D0F;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: opacity 0.2s;
+        }
+        .download-btn:hover { opacity: 0.9; }
+        .footer {
+            margin-top: 40px;
+            color: #555;
+            font-size: 13px;
+        }
+        .footer a { color: #C9A44A; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🙏</div>
+        <h1>Join a <span>prAmen</span> Prayer Circle</h1>
+        <p class="subtitle">Someone invited you to pray together. Here's how to join:</p>
+
+        <div class="code-box" id="codeBox">
+            <div class="code-label">Your Circle Code</div>
+            <div class="code-value" id="circleCode"></div>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>Download <strong>prAmen</strong> from the App Store</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>Open the app and go to the <strong>Prayer Circle</strong> tab</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div id="stepThree">Tap <strong>"Join a Circle"</strong> and enter the code shared with you</div>
+            </div>
+        </div>
+
+        <!-- IMPORTANT: Replace YOUR_APP_ID with your real App Store ID after approval -->
+        <a href="https://apps.apple.com/app/pramen/id0000000000" class="download-btn" id="downloadBtn">
+            Download prAmen
+        </a>
+
+        <div class="footer">
+            <a href="/">pramen.app</a> &middot;
+            <a href="/privacy.html">Privacy</a> &middot;
+            <a href="/terms.html">Terms</a> &middot;
+            <a href="/support.html">Support</a>
+        </div>
+    </div>
+
+    <script>
+        var hashCode = window.location.hash.replace('#', '');
+        var pathParts = window.location.pathname.split('/').filter(Boolean);
+        var code = hashCode || (pathParts.length > 1 ? pathParts[pathParts.length - 1] : '');
+
+        if (code && /^[A-Z0-9]{4,8}$/i.test(code)) {
+            code = code.toUpperCase();
+            document.getElementById('codeBox').style.display = 'block';
+            document.getElementById('circleCode').textContent = code;
+            document.getElementById('stepThree').innerHTML =
+                'Tap <strong>"Join a Circle"</strong> and enter the code <strong style="color:#C9A44A;letter-spacing:2px;">' + code + '</strong>';
+        }
+    </script>
+</body>
+</html>
