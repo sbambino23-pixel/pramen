@@ -22,7 +22,8 @@
             padding: 40px 20px;
         }
         .container { max-width: 480px; text-align: center; }
-        .emoji { font-size: 64px; margin-bottom: 24px; }
+        .logo { margin-bottom: 24px; }
+        .logo img { border-radius: 20px; box-shadow: 0 4px 24px rgba(201, 164, 74, 0.2); }
         h1 { font-size: 28px; margin-bottom: 12px; }
         h1 span { color: #C9A44A; }
         .subtitle {
@@ -104,7 +105,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="emoji">🙏</div>
+        <div class="logo">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dc/84/c5/dc84c5f0-6bca-c498-9a82-3f9df1e9d25e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/230x0w.webp" alt="prAmen" width="80" height="80" style="border-radius: 20px;">
+        </div>
         <h1>Join a <span>prAmen</span> Prayer Circle</h1>
         <p class="subtitle">Someone invited you to pray together. Here's how to join:</p>
 
@@ -128,8 +131,7 @@
             </div>
         </div>
 
-        <!-- IMPORTANT: Replace YOUR_APP_ID with your real App Store ID after approval -->
-        <a href="https://apps.apple.com/app/pramen/id0000000000" class="download-btn" id="downloadBtn">
+        <a href="https://apps.apple.com/app/pramen/id6759958354" class="download-btn" id="downloadBtn">
             Download prAmen
         </a>
 
@@ -152,6 +154,18 @@
             document.getElementById('circleCode').textContent = code;
             document.getElementById('stepThree').innerHTML =
                 'Tap <strong>"Join a Circle"</strong> and enter the code <strong style="color:#C9A44A;letter-spacing:2px;">' + code + '</strong>';
+
+            fetch('https://web-production-88ed0.up.railway.app/api/circles/' + code + '/info')
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(data) {
+                    if (data && data.name) {
+                        document.querySelector('h1').innerHTML =
+                            'Join <span style="color:#C9A44A">' + data.name + '</span> Prayer Circle';
+                        document.querySelector('.subtitle').textContent =
+                            'Someone invited you to pray together in "' + data.name + '". Here\'s how to join:';
+                    }
+                })
+                .catch(function() { /* keep default text */ });
         }
     </script>
 </body>
